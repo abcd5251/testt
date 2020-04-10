@@ -80,11 +80,12 @@ def ml_loop():
             #最上面395
         j=0
         for j in range(len(scene_info.bricks)):
-            if scene_info.bricks[j][1]-ball_y>0 and ball_x+((scene_info.bricks[j][1]-ball_y)/vectors_y)*vectors_x==scene_info.bricks[j][0]:
-                if ball_willbe_x<scene_info.bricks[j][0] and vectors_x<0:
-                    ball_willbe_x=scene_info.bricks[j][0]+ball_willbe_x
-                elif ball_willbe_x>scene_info.bricks[j][0] and vectors_x>0:
-                    ball_willbe_x=scene_info.bricks[j][0]-(ball_willbe_x-scene_info.bricks[j][0])
+            if scene_info.bricks[j][1]-ball_y>0:
+                if ball_x+((scene_info.bricks[j][1]-ball_y)/vectors_y)*vectors_x<scene_info.bricks[j][0]+5 or ball_x+((scene_info.bricks[j][1]-ball_y)/vectors_y)*vectors_x>scene_info.bricks[j][0]-5:
+                    if ball_willbe_x<scene_info.bricks[j][0] and vectors_x<0:
+                        ball_willbe_x=scene_info.bricks[j][0]+ball_willbe_x
+                    elif ball_willbe_x>scene_info.bricks[j][0] and vectors_x>0:
+                        ball_willbe_x=scene_info.bricks[j][0]-(ball_willbe_x-scene_info.bricks[j][0])
             else:
                 if ball_willbe_x<0:
                     temp=0-ball_willbe_x
@@ -94,7 +95,8 @@ def ml_loop():
                     ball_willbe_x=195-temp
         j=0
         for j in range(len(scene_info.hard_bricks)):
-         if scene_info.hard_bricks[j][1]-ball_y>0 and ball_x+((scene_info.hard_bricks[j][1]-ball_y)/vectors_y)*vectors_x==scene_info.hard_bricks[j][0]:
+         if scene_info.hard_bricks[j][1]-ball_y>0:
+             if ball_x+((scene_info.hard_bricks[j][1]-ball_y)/vectors_y)*vectors_x<scene_info.hard_bricks[j][0]+5 or ball_x+((scene_info.hard_bricks[j][1]-ball_y)/vectors_y)*vectors_x>scene_info.hard_bricks[j][0]-5:
                if ball_willbe_x<scene_info.hard_bricks[j][0] and vectors_x<0:
                    ball_willbe_x=scene_info.hard_bricks[j][0]+ball_willbe_x
                elif ball_willbe_x>scene_info.hard_bricks[j][0] and vectors_x>0:
@@ -108,11 +110,12 @@ def ml_loop():
                  ball_willbe_x=195-temp
         j=0
         for j in range(len(scene_info.bricks)):
-            if scene_info.bricks[j][1]-ball_y>0 and ball_x+((scene_info.bricks[j][1]-ball_y)/vectors_y)*vectors_x==scene_info.bricks[j][0]:
-                if ball_willbe_x<scene_info.bricks[j][0] and vectors_x<0:
-                    ball_willbe_x=scene_info.bricks[j][0]+ball_willbe_x
-                elif ball_willbe_x>scene_info.bricks[j][0] and vectors_x>0:
-                    ball_willbe_x=scene_info.bricks[j][0]-(ball_willbe_x-scene_info.bricks[j][0])
+            if scene_info.bricks[j][1]-ball_y>0:
+                if ball_x+((scene_info.bricks[j][1]-ball_y)/vectors_y)*vectors_x<scene_info.bricks[j][0]+5 or ball_x+((scene_info.bricks[j][1]-ball_y)/vectors_y)*vectors_x>scene_info.bricks[j][0]-5:
+                 if ball_willbe_x<scene_info.bricks[j][0] and vectors_x<0:
+                     ball_willbe_x=scene_info.bricks[j][0]+ball_willbe_x
+                 elif ball_willbe_x>scene_info.bricks[j][0] and vectors_x>0:
+                     ball_willbe_x=scene_info.bricks[j][0]-(ball_willbe_x-scene_info.bricks[j][0])
             else:
                 if ball_willbe_x<0:
                     temp=0-ball_willbe_x
@@ -136,11 +139,12 @@ def ml_loop():
                 ball_willbe_x=195-temp
         j=0
         for j in range(len(scene_info.bricks)):
-            if scene_info.bricks[j][1]-ball_y>0 and ball_x+((scene_info.bricks[j][1]-ball_y)/vectors_y)*vectors_x==scene_info.bricks[j][0]:
-                if ball_willbe_x<scene_info.bricks[j][0] and vectors_x<0:
-                    ball_willbe_x=scene_info.bricks[j][0]+ball_willbe_x
-                elif ball_willbe_x>scene_info.bricks[j][0] and vectors_x>0:
-                    ball_willbe_x=scene_info.bricks[j][0]-(ball_willbe_x-scene_info.bricks[j][0])
+            if scene_info.bricks[j][1]-ball_y>0:
+                if ball_x+((scene_info.bricks[j][1]-ball_y)/vectors_y)*vectors_x<scene_info.bricks[j][0]+5 or ball_x+((scene_info.bricks[j][1]-ball_y)/vectors_y)*vectors_x>scene_info.bricks[j][0]-5:
+                    if ball_willbe_x<scene_info.bricks[j][0] and vectors_x<0:
+                        ball_willbe_x=scene_info.bricks[j][0]+ball_willbe_x
+                    elif ball_willbe_x>scene_info.bricks[j][0] and vectors_x>0:
+                        ball_willbe_x=scene_info.bricks[j][0]-(ball_willbe_x-scene_info.bricks[j][0])
             else:
                 if ball_willbe_x<0:
                     temp=0-ball_willbe_x
