@@ -76,36 +76,44 @@ def ml_loop():
                     vectors_y*=-1
                 time=(platform_y-ball_y)/vectors_y
                 ball_willbe_x=ball_x+(vectors_x*time)
-        #195,0 最右邊跟最左邊
+        #200,0 最右邊跟最左邊
             #最上面395
         j=0
         for j in range(len(scene_info.bricks)):
             if scene_info.bricks[j][1]-ball_y>0 and ball_x+((scene_info.bricks[j][1]-ball_y)/vectors_y)*vectors_x==scene_info.bricks[j][0]:
                 if ball_willbe_x<scene_info.bricks[j][0] and vectors_x<0:
                     ball_willbe_x=scene_info.bricks[j][0]+ball_willbe_x
+                    break
                 elif ball_willbe_x>scene_info.bricks[j][0] and vectors_x>0:
                     ball_willbe_x=scene_info.bricks[j][0]-(ball_willbe_x-scene_info.bricks[j][0])
+                    break
             else:
                 if ball_willbe_x<0:
                     temp=0-ball_willbe_x
                     ball_willbe_x=temp
+                    break
                 elif ball_willbe_x>200:
                     temp=ball_willbe_x-200
                     ball_willbe_x=200-temp
+                    break
         j=0
         for j in range(len(scene_info.hard_bricks)):
          if scene_info.hard_bricks[j][1]-ball_y>0 and ball_x+((scene_info.hard_bricks[j][1]-ball_y)/vectors_y)*vectors_x==scene_info.hard_bricks[j][0]:
                if ball_willbe_x<scene_info.hard_bricks[j][0] and vectors_x<0:
                    ball_willbe_x=scene_info.hard_bricks[j][0]+ball_willbe_x
+                   break
                elif ball_willbe_x>scene_info.hard_bricks[j][0] and vectors_x>0:
-                    ball_willbe_x=scene_info.hard_bricks[j][0]-(ball_willbe_x-scene_info.hard_bricks[j][0])                   
+                    ball_willbe_x=scene_info.hard_bricks[j][0]-(ball_willbe_x-scene_info.hard_bricks[j][0])
+                    break
          else:
              if ball_willbe_x<0:
                  temp=0-ball_willbe_x
                  ball_willbe_x=temp
+                 break
              elif ball_willbe_x>200:
                  temp=ball_willbe_x-200
                  ball_willbe_x=200-temp
+                 break
      
         
         # 3.4. Send the instruction for this frame to the game process
